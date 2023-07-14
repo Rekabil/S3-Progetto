@@ -472,7 +472,12 @@ function es25() {
   Scrivi una funzione per aggiungere ad ogni tag <tr> la classe CSS "test"
 */
 console.log("Esercizio 26");
-
+function es26() {
+  let arraytag = document.querySelectorAll("tr");
+  for (let i = 0; i < arraytag.length; i++) {
+    arraytag[i].classList.add("test");
+  }
+}
 // [EXTRA] JS Avanzato
 
 /* ESERCIZIO 27
@@ -502,6 +507,17 @@ console.log("Esercizio 28");
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
-
-/* Questo array viene usato per gli esercizi. Non modificarlo. */
 console.log("Esercizio 29");
+
+function isItPrime(num) {
+  let sqr = Math.floor(Math.sqrt(num));
+  let prime = num != 1;
+  for (let i = 2; i <= sqr + 1; i++) {
+    if (num % i === 0) {
+      prime = false;
+      break;
+    }
+  }
+  return prime;
+}
+console.log(isItPrime(11));
